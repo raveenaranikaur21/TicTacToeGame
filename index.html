@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 id="gameTitle">Welcome to Tic Tac Toe</h1>
+        
+        <div class="player-names" id="playerNamesSection">
+            <input type="text" id="player1Name" placeholder="Enter Player 1 (X)" required>
+            <input type="text" id="player2Name" placeholder="Enter Player 2 (O)" required>
+            
+            <div class="game-mode">
+                <label>
+                    <input type="radio" name="mode" value="two-player" checked>
+                    <span>Two Players</span>
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="single-player">
+                    <span>Play Against Computer</span>
+                </label>
+            </div>
+            
+            <button id="startGameButton">Start Game</button>
+        </div>
+
+        <div class="status" id="statusText" style="display: none;">Player X's turn</div>
+
+        <div class="board" id="gameBoard" style="display: none;">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="winning-line"></div>
+        </div>
+
+        <div id="gameHistory" style="display: none;">
+            <h2>Game History</h2>
+        </div>
+
+        <div class="game-buttons" style="display: none;">
+            <button class="restart main-restart">Restart Game</button>
+            <button class="quit-game">Quit Game</button>
+        </div>
+    </div>
+    
+    <div class="win-popup" id="winPopup" style="display: none;">
+        <h2 id="winMessage">You Won!</h2>
+        <div class="popup-buttons">
+            <button class="restart popup-restart">Restart</button>
+            <button class="quit-game popup-quit">Quit Game</button>
+        </div>
+    </div>
+    
+    <canvas id="confettiCanvas"></canvas>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
